@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados del Modelo Random Forest</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+        h1, h2, h3 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background: #3498db; color: white; }
+        .section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Resultados del Modelo Random Forest</h1>
+
+    <div class="section">
+        <h2>📈 Métricas del Modelo</h2>
+        <p>✅ F1 Score (Entrenamiento): {{ f1_train|floatformat:4 }}</p>
+        <p>✅ F1 Score (Validación): {{ f1_val|floatformat:4 }}</p>
+    </div>
+
+    <div class="section">
+        <h2>📘 Información del Dataset</h2>
+        <p>Longitud del Dataset: {{ longitud }}</p>
+        <p>Número de características: {{ num_caract }}</p>
+    </div>
+
+    <div class="section">
+        <h2>🧾 Primeras 10 Filas</h2>
+        {{ head_html|safe }}
+    </div>
+
+    <div class="section">
+        <h2>📊 Estadísticas Descriptivas</h2>
+        {{ describe_html|safe }}
+    </div>
+
+    <div class="section">
+        <h2>📚 Información General</h2>
+        <p>{{ info_str|safe }}</p>
+    </div>
+
+    <div class="section">
+        <h2>📋 Conteo de Clases</h2>
+        {{ conteo_clases|safe }}
+    </div>
+
+    <div class="section">
+        <h2>📉 Correlación con la clase</h2>
+        {{ corr_with_class|safe }}
+    </div>
+
+    <div class="section">
+        <h2>🎯 Variables con correlación > 0.05</h2>
+        {{ corr_pos|safe }}
+    </div>
+
+    <div class="section">
+        <h2>🔍 Escalado del Dataset (Primeras Filas)</h2>
+        {{ X_train_scaled_head|safe }}
+    </div>
+
+    <div class="section">
+        <h2>📏 Métricas del Random Forest Regressor</h2>
+        <p>MSE: {{ mse|floatformat:2 }}</p>
+        <p>RMSE: {{ rmse|floatformat:2 }}</p>
+        <p>R²: {{ r2|floatformat:2 }}</p>
+    </div>
+
+    <div class="section">
+        <h2>📉 Gráfica del Modelo</h2>
+        <img src="data:image/png;base64,{{ grafica_base64 }}" alt="Gráfica del modelo" />
+    </div>
+</body>
+</html>

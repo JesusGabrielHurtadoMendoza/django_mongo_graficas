@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f4f9; }
+        h1 { color: #d9534f; }
+        pre { background: #222; color: #0f0; padding: 15px; border-radius: 8px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>{{ titulo }}</h1>
+    <h2>Error:</h2>
+    <p>{{ error }}</p>
+
+    {% if trace %}
+    <h3>Detalles técnicos:</h3>
+    <pre>{{ trace }}</pre>
+    {% endif %}
+</body>
+</html>

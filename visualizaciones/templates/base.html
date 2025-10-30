@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Visualización de Modelo{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f6f6f6; padding: 20px; }
+        header { background: #003366; color: white; padding: 15px; border-radius: 8px; }
+        main { background: white; padding: 20px; border-radius: 8px; margin-top: 15px; }
+        footer { text-align: center; margin-top: 20px; color: gray; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resultados del Modelo Random Forest</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        Proyecto Django - Visualización de modelos
+    </footer>
+</body>
+</html>
