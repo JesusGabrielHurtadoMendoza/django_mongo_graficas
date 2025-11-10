@@ -1,1 +1,1 @@
-web: gunicorn graficas_mongo.wsgi
+echo "web: gunicorn graficas_mongo.wsgi" > Procfile

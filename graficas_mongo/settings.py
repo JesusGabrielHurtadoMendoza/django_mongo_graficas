@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'tu_base',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://jesusgabo2002_db_user:rTtZXNLSOwAamlvz@cluster0.l7t6q6j.mongodb.net/',
+            'host': 'mongodb+srv://jesusgabo2002_db_user:<db_password>@cluster0.l7t6q6j.mongodb.net/',
         }
     }
 }
